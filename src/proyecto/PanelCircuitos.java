@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -15,26 +14,30 @@ import javax.swing.JPanel;
 public class PanelCircuitos extends JPanel implements MouseListener
 {
 	
-	private Image resistencia;
+	private ImageIcon resistencia,capacitor,conductor,voltaje;
+	Dimension height = getSize();
+
 	
 	public PanelCircuitos() {
 		super();
 		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.LEFT);
 		this.setPreferredSize(new Dimension(1080,160));
 		this.setBackground(new Color(183,183,183));
-		this.resistencia = new ImageIcon("resistencia.png").getImage();
+		this.resistencia = new ImageIcon(getClass().getResource("resistencia.png"));
+		this.capacitor = new ImageIcon(getClass().getResource("capacitor.png"));
+		this.conductor =new ImageIcon(getClass().getResource("conductor.png"));
+		this.voltaje = new ImageIcon(getClass().getResource("voltaje.png"));
 		this.addMouseListener(this);
 	}
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		g.drawImage(this.resistencia,0,0,100,100,this);
-		dibujaFiguras(g);
+		g.drawImage(this.resistencia.getImage(),0,0,200,100,this);
+		g.drawImage(this.capacitor.getImage(),210,0,100,100,this);
+		g.drawImage(this.conductor.getImage(),320,0,100,100,this);
+		g.drawImage(this.voltaje.getImage(),430,0,100,100,this);
 	}
 
-	public void dibujaFiguras(Graphics g){
-		g.drawImage(this.resistencia, 0, 0, this.getWidth(),this.getHeight(),this);
-	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -68,35 +71,7 @@ public class PanelCircuitos extends JPanel implements MouseListener
 }
 	
 	/*
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
 
 
