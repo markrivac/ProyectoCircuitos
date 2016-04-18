@@ -31,7 +31,7 @@ public class PanelCircuitos extends JPanel implements MouseListener
 		g.drawImage(this.resistencia,0,0,100,100,this);
 		dibujaFiguras(g);
 	}
-	
+
 	public void dibujaFiguras(Graphics g){
 		g.drawImage(this.resistencia, 0, 0, this.getWidth(),this.getHeight(),this);
 	}
@@ -66,8 +66,40 @@ public class PanelCircuitos extends JPanel implements MouseListener
 		
 	}
 }
+	
+	/*
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 
-/*
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}
+
+
 
 
 		MouseMotionListener mml = new MouseMotionListener() {
@@ -189,5 +221,4 @@ public class PanelCircuitos extends JPanel implements MouseListener
 		this.repaint();
 
 	}
-}
-*/
+}*/
