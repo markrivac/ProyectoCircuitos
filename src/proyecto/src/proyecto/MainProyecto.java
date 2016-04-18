@@ -34,9 +34,11 @@ public class MainProyecto extends JFrame{
 
 
 	}
+	
 
 	public static void main(String[] args){
 		@SuppressWarnings("unused")
 		MainProyecto frame = new MainProyecto();
 	}
+
 }

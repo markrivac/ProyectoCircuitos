@@ -28,6 +28,7 @@ public class PanelMalla extends JPanel implements MouseMotionListener, MouseList
 	}
 	
 	public void dibujaMalla(Graphics g){
+		
 		g.setColor(Color.BLACK);
 		g.drawLine(60, 60, 160, 60);
 		g.drawRect(160, 20, 100, 80);
@@ -49,7 +50,9 @@ public class PanelMalla extends JPanel implements MouseMotionListener, MouseList
 		
 		g.drawLine(60, 300, 60, 220);
 		g.drawRect(20, 140, 100, 80);
-		g.drawLine(60, 60, 60, 140);	
+		g.drawLine(60, 60, 60, 140);
+		
+		g.drawLine(60, 260, 380, 260);
 	}
 	
 	

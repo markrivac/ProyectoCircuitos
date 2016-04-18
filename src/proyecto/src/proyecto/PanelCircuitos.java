@@ -8,34 +8,51 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class PanelCircuitos extends JPanel implements MouseListener
 {
 	
-	private ImageIcon resistencia,capacitor,conductor,voltaje;
-	Dimension height = getSize();
-
+	private ImageIcon resistenciaIMG,capacitorIMG,conductorIMG,voltajeIMG;
+	private JButton resistencia, capacitor, conductor, voltaje;
 	
 	public PanelCircuitos() {
 		super();
 		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.LEFT);
 		this.setPreferredSize(new Dimension(1080,160));
 		this.setBackground(new Color(183,183,183));
-		this.resistencia = new ImageIcon(getClass().getResource("resistencia.png"));
-		this.capacitor = new ImageIcon(getClass().getResource("capacitor.png"));
-		this.conductor =new ImageIcon(getClass().getResource("conductor.png"));
-		this.voltaje = new ImageIcon(getClass().getResource("voltaje.png"));
+		
+		this.resistenciaIMG = new ImageIcon(getClass().getResource("resistencia.png"));
+		this.capacitorIMG = new ImageIcon(getClass().getResource("capacitor.png"));
+		this.conductorIMG =new ImageIcon(getClass().getResource("conductor.png"));
+		this.voltajeIMG = new ImageIcon(getClass().getResource("voltaje.png"));
+		
+		this.resistencia = new JButton(resistenciaIMG);
+		this.capacitor = new JButton(capacitorIMG);
+		this.conductor = new JButton(conductorIMG);
+		this.voltaje = new JButton(voltajeIMG);
+		
+		this.add(this.resistencia);
+		this.add(this.capacitor);
+		this.add(this.conductor);
+		this.add(this.voltaje);
+		
+		this.resistencia.setSize(100, 100);
+		this.capacitor.setSize(100, 100);
+		this.conductor.setSize(100, 100);
+		this.voltaje.setSize(100, 100);
+		
 		this.addMouseListener(this);
 	}
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		g.drawImage(this.resistencia.getImage(),0,0,200,100,this);
-		g.drawImage(this.capacitor.getImage(),210,0,100,100,this);
-		g.drawImage(this.conductor.getImage(),320,0,100,100,this);
-		g.drawImage(this.voltaje.getImage(),430,0,100,100,this);
+		/*g.drawImage(this.resistencia.getImage(),120 ,getHeight()/5,100,100,this);
+		g.drawImage(this.capacitor.getImage(),365 ,getHeight()/5,100,100,this);
+		g.drawImage(this.conductor.getImage(),610 ,getHeight()/5,100,100,this);
+		g.drawImage(this.voltaje.getImage(),855 ,getHeight()/5,100,100,this);*/
 	}
 
 
