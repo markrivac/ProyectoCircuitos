@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 /**
  PROYECTO:
  Kevin Oswaldo Cabrera Navarro A01227157
- Mark Octavio Rivera Acosta A01234567
+ Mark Rivera Acosta A01234567
  */
 
 public class MainProyecto extends JFrame{
