@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class PanelMalla extends JPanel implements MouseMotionListener, MouseListener {
 	
-	public PanelMalla(PanelControles pc)  {
+	public PanelMalla()  {
 		super();
 		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.LEFT);
 		this.setPreferredSize(new Dimension(440,680));

@@ -28,8 +28,9 @@ public class PanelControles extends JPanel implements ActionListener{
 						panelRes4,
 						panelRes5,
 						panelRes6;
+	private PanelResultados pr;
 
-	public PanelControles() {
+	public PanelControles(PanelResultados pr) {
 		super();
 		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.CENTER);
 		this.setPreferredSize(new Dimension(200,720));
@@ -43,6 +44,7 @@ public class PanelControles extends JPanel implements ActionListener{
 		this.panelRes4=new Resistencia();
 		this.panelRes5=new Resistencia();
 		this.panelRes6=new Resistencia();
+		this.pr=pr;
 		
 		//Adds components into the panel
 		this.add(panelRes);
@@ -53,7 +55,6 @@ public class PanelControles extends JPanel implements ActionListener{
 		this.add(panelRes6);
 		this.add(bResultado);
 		
-		
 		//Adds Listeners
 		this.bResultado.addActionListener(this);
 	}
@@ -62,6 +63,7 @@ public class PanelControles extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==this.bResultado){
 			System.out.println("resultado");
+			pr.imprimeHola();
 		}
 	}
 }

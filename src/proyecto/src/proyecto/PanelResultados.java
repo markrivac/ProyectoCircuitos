@@ -16,6 +16,8 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class PanelResultados extends JPanel {
+	
+
 	public PanelResultados() {
 		super();
 		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.LEFT);
@@ -24,6 +26,9 @@ public class PanelResultados extends JPanel {
 		
 	}
 	
+	public void imprimeHola(){
+		System.out.println("hola");
+	}
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		dibujaCircuito(g);
