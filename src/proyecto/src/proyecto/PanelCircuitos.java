@@ -1,5 +1,14 @@
 package proyecto;
 
+/**
+ * Saved as PanelCircuitos.java
+ * @author Kevin Oswaldo Cabrera Navarro A01227157
+ * @author Mark Octavio Rivera Acosta A01234567
+ * 
+ * Started in April 6th, 2016
+ * Last modified in April 19th, 2016
+ */
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;

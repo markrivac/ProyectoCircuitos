@@ -4,9 +4,13 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 /**
- PROYECTO:
- Kevin Oswaldo Cabrera Navarro A01227157
- Mark Octavio Rivera Acosta A01234567
+ * PROJECT METODOS NUMERICOS
+ * Saved as MainProjecto.java
+ * @author Kevin Oswaldo Cabrera Navarro A01227157
+ * @author Mark Octavio Rivera Acosta A01234567
+ * 
+ * Started in April 6th, 2016
+ * Last modified in April 19th, 2016
  */
 
 public class MainProyecto extends JFrame{
