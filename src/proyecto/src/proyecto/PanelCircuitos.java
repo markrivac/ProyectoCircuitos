@@ -88,12 +88,7 @@ public class PanelCircuitos extends JPanel implements MouseListener
 }
 	
 	/*
-	
 }
-
-
-
-
 		MouseMotionListener mml = new MouseMotionListener() {
 			
 			@Override
