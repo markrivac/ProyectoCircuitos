@@ -42,6 +42,7 @@ public class Resistencia extends JPanel implements ActionListener {
 		
 		//Adds components into the panel
 		this.bOk.addActionListener(this);
+		this.bReset.addActionListener(this);
 		
 		//Adds Listeners
 		this.add(lLabel);
@@ -53,11 +54,13 @@ public class Resistencia extends JPanel implements ActionListener {
 	//Actions are perfomed in this method
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==this.bOk){
-		System.out.println(this.tTexto.getText());
-		@SuppressWarnings("unused")
-		String a= this.tTexto.getText();
+		this.valor= Integer.parseInt(this.tTexto.getText());
+		System.out.println("El valor es: "+this.valor);
+		
 		}else if(e.getSource()==this.bReset){
 			this.valor=0;
+			System.out.println("El valor es: "+this.valor);
+			this.tTexto.setText("0");
 		}
 	}
 }
