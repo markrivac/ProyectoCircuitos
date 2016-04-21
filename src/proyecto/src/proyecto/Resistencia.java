@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -50,10 +51,17 @@ public class Resistencia extends JPanel implements ActionListener {
 		this.add(bReset);
 	}
 	
-	//Actions are perfomed in this method
+	//Actions are performed in this method
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==this.bOk){
 		this.valor= Integer.parseInt(this.tTexto.getText());
+		//checks its positive
+		if(this.valor<0){
+			JOptionPane.showMessageDialog(null, "NO PUEDEN SER RESISTENCIAS NEGATIVAS");
+			this.tTexto.setText("0");
+			this.valor=0;
+		}
+		//prints value (Only for testing)
 		System.out.println("El valor es: "+this.valor);
 		
 		}else if(e.getSource()==this.bReset){

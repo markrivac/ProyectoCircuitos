@@ -11,8 +11,6 @@ package proyecto;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Graphics;
-//import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -23,7 +21,7 @@ import javax.swing.JPanel;
 public class PanelControles extends JPanel implements ActionListener{
 	private JButton bResultado;
 	@SuppressWarnings("unused")
-	private Resistencia[] resistencia = new Resistencia[6];
+	private Resistencia[] arrRes = new Resistencia[6];
 	private Resistencia panelRes, 
 						panelRes2,
 						panelRes3,
@@ -48,24 +46,21 @@ public class PanelControles extends JPanel implements ActionListener{
 		this.pr=pr;
 		
 		//Adds components into the panel
-		this.add(panelRes);
-		this.add(panelRes2);
-		this.add(panelRes3);
-		this.add(panelRes4);
-		this.add(panelRes5);
-		this.add(voltaje);
 		this.add(bResultado);
 		
 		//Adds Listeners
 		this.bResultado.addActionListener(this);
 	}
 	
-	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==this.bResultado){
 			System.out.println("resultado");
+			pr.setBackground(Color.black);
+			this.add(panelRes);
+			this.add(voltaje);
+			this.revalidate();
 		}
 	}
 }
