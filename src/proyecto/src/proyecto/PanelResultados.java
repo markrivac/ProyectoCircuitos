@@ -17,21 +17,17 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class PanelResultados extends JPanel {
 	
+	int dibuja=0;
 
 	public PanelResultados() {
 		super();
 		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.LEFT);
 		this.setPreferredSize(new Dimension(440,680));
 		this.setBackground(new Color(251,250,250));
-		
 	}
 	
-	public void imprimeHola(){
-		System.out.println("hola");
-	}
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		dibujaCircuito(g);
 	}
 	
 	public void dibujaCircuito(Graphics g){

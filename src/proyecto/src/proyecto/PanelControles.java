@@ -11,6 +11,8 @@ package proyecto;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
+//import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -26,10 +28,9 @@ public class PanelControles extends JPanel implements ActionListener{
 						panelRes2,
 						panelRes3,
 						panelRes4,
-						panelRes5,
-						panelRes6;
+						panelRes5;
 	private PanelResultados pr;
-
+	private Voltaje voltaje;
 	public PanelControles(PanelResultados pr) {
 		super();
 		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.CENTER);
@@ -43,7 +44,7 @@ public class PanelControles extends JPanel implements ActionListener{
 		this.panelRes3=new Resistencia();
 		this.panelRes4=new Resistencia();
 		this.panelRes5=new Resistencia();
-		this.panelRes6=new Resistencia();
+		this.voltaje=new Voltaje();
 		this.pr=pr;
 		
 		//Adds components into the panel
@@ -52,18 +53,19 @@ public class PanelControles extends JPanel implements ActionListener{
 		this.add(panelRes3);
 		this.add(panelRes4);
 		this.add(panelRes5);
-		this.add(panelRes6);
+		this.add(voltaje);
 		this.add(bResultado);
 		
 		//Adds Listeners
 		this.bResultado.addActionListener(this);
 	}
+	
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==this.bResultado){
 			System.out.println("resultado");
-			pr.imprimeHola();
 		}
 	}
 }

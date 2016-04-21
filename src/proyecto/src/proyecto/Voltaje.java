@@ -19,14 +19,15 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
-public class Resistencia extends JPanel implements ActionListener {
+public class Voltaje extends JPanel implements ActionListener {
+	@SuppressWarnings("unused")
 	private int valor=0;
 	private JButton bOk, bReset;	
 	private JLabel lLabel;
 	private JTextField tTexto;
 	private Font fuente;
 	
-	public Resistencia(){
+	public Voltaje(){
 		super();
 		this.setPreferredSize(new Dimension(190,70));
 		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.LEFT);
@@ -34,10 +35,10 @@ public class Resistencia extends JPanel implements ActionListener {
 		//Instantiate components
 		this.bOk=new JButton("Ok");
 		this.bReset= new JButton("Reset");
-		this.lLabel= new JLabel("Resistencia");
+		this.lLabel= new JLabel("Voltaje");
 		this.fuente= new Font("New Times Roman",Font.BOLD,13);
 		this.lLabel.setFont(fuente);
-		this.tTexto= new JTextField(7);
+		this.tTexto= new JTextField(9);
 		
 		//Adds components into the panel
 		this.bOk.addActionListener(this);
