@@ -52,15 +52,21 @@ public class PanelControles extends JPanel implements ActionListener{
 		this.bResultado.addActionListener(this);
 	}
 	
+	public void agregaPanel(){
+		this.add(panelRes);
+		this.add(panelRes2);
+		this.add(voltaje);
+		this.add(bResultado);
+		this.revalidate();
+	}
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==this.bResultado){
 			System.out.println("resultado");
 			pr.setBackground(Color.black);
-			this.add(panelRes);
-			this.add(voltaje);
-			this.revalidate();
+			this.agregaPanel();
 		}
 	}
 }
