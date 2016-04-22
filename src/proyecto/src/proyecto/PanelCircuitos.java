@@ -29,31 +29,33 @@ public class PanelCircuitos extends JPanel implements ActionListener
 	private JButton resistencia, capacitor, conductor, voltaje;
 	private PanelMalla pm;
 	
-	public PanelCircuitos() {
+	public PanelCircuitos(PanelMalla pm) {
 		super();
 		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.LEFT);
 		this.setPreferredSize(new Dimension(1080,160));
 		this.setBackground(new Color(183,183,183));
 		
+		//Receive a panel
+		this.pm=pm;
 		this.resistenciaIMG = new ImageIcon(getClass().getResource("resistencia.png"));
 		this.capacitorIMG = new ImageIcon(getClass().getResource("capacitor.png"));
 		this.conductorIMG =new ImageIcon(getClass().getResource("conductor.png"));
 		this.voltajeIMG = new ImageIcon(getClass().getResource("voltaje.png"));
 		
 		 Image img = resistenciaIMG.getImage() ;  
-		 Image newimg = img.getScaledInstance( 100, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
+		 Image newimg = img.getScaledInstance( 150, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
 		 resistenciaIMG = new ImageIcon( newimg );
 		   
 		 Image img2 = capacitorIMG.getImage() ;  
-		 Image newimg2 = img2.getScaledInstance( 100, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
+		 Image newimg2 = img2.getScaledInstance( 150, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
 		 capacitorIMG = new ImageIcon( newimg2 );
 		   
 		 Image img3 = conductorIMG.getImage() ;  
-		 Image newimg3 = img3.getScaledInstance( 100, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
+		 Image newimg3 = img3.getScaledInstance( 150, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
 		 conductorIMG = new ImageIcon( newimg3 );
 		   
 		 Image img4 = voltajeIMG.getImage() ;  
-		 Image newimg4 = img4.getScaledInstance( 100, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
+		 Image newimg4 = img4.getScaledInstance( 150, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
 		 voltajeIMG = new ImageIcon( newimg4 );
 		
 		this.resistencia = new JButton(resistenciaIMG);
@@ -82,18 +84,21 @@ public class PanelCircuitos extends JPanel implements ActionListener
 		// TODO Auto-generated method stub
 		if(e.getSource()==this.resistencia){
 			System.out.println("resistencia");
+			pm.cambiarComponente("Resistencia");
+			
 		}else if(e.getSource()==this.capacitor){
 			System.out.println("capacitor");
+			pm.cambiarComponente("Capacitor");
+			
 		}else if(e.getSource()==this.voltaje){
 			System.out.println("voltaje");
+			pm.cambiarComponente("Voltaje");
+			
 		}else if(e.getSource()==this.conductor){
 			System.out.println("conductor");
+			pm.cambiarComponente("Conductor");
+			
 		}
 	}
-	
-
-	
-
-	
 }
 	

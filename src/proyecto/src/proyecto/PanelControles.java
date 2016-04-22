@@ -55,6 +55,9 @@ public class PanelControles extends JPanel implements ActionListener{
 	public void agregaPanel(){
 		this.add(panelRes);
 		this.add(panelRes2);
+		this.add(panelRes3);
+		this.add(panelRes4);
+		this.add(panelRes5);
 		this.add(voltaje);
 		this.add(bResultado);
 		this.revalidate();

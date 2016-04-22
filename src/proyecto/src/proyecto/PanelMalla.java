@@ -5,9 +5,10 @@ package proyecto;
  * @author Mark Octavio Rivera Acosta A01234567
  * 
  * Started in April 6th, 2016
- * Last modified in April 19th, 2016
+ * Last modified in April 20th, 2016
  */
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
@@ -22,16 +23,27 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class PanelMalla extends JPanel{
-	
-	private ImageIcon resistenciaIMG,capacitorIMG,conductorIMG,voltajeIMG;
+public class PanelMalla extends JPanel implements MouseListener{
+	//Declaration 
+	private ImageIcon resistenciaIMG,
+					  capacitorIMG,
+					  conductorIMG,
+					  voltajeIMG;
 
 	
+	private PanelControles pc;
+	
+	private String componente;
+
+	//Main Constructor
 	public PanelMalla()  {
 		super();
 		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.LEFT);
 		this.setPreferredSize(new Dimension(440,680));
 		this.setBackground(Color.WHITE);
+		
+		
+		//Instantiation of images
 		this.resistenciaIMG = new ImageIcon(getClass().getResource("resistencia.png"));
 		this.capacitorIMG = new ImageIcon(getClass().getResource("capacitor.png"));
 		this.conductorIMG =new ImageIcon(getClass().getResource("conductor.png"));
@@ -52,14 +64,17 @@ public class PanelMalla extends JPanel{
 		 Image img4 = voltajeIMG.getImage() ;  
 		 Image newimg4 = img4.getScaledInstance( 100, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
 		 voltajeIMG = new ImageIcon( newimg4 );
+		 
+		 //Adds listeners
+		 this.addMouseListener(this);
 	}
 	
 	public void paintComponent(Graphics g){
-
 		super.paintComponent(g);
 		dibujaMalla(g);
 	}
 	
+	//Draws the initial circuit
 	public void dibujaMalla(Graphics g){
 		
 		g.setColor(Color.BLACK);
@@ -88,6 +103,38 @@ public class PanelMalla extends JPanel{
 		g.drawLine(60, 260, 380, 260);
 	}
 
-	
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		System.out.println("hola");
+		pc.agregaPanel();
+	}
 
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void cambiarComponente(String componente){
+		this.componente=componente;
+		System.out.println("hola soy un: "+this.componente);
+	}
 }

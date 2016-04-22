@@ -21,17 +21,20 @@ public class MainProyecto extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setPreferredSize(new Dimension(1080, 720));
 
-		PanelMalla pm = new PanelMalla();
-		this.add(pm, BorderLayout.CENTER);	
 		
 		PanelResultados pr = new PanelResultados();
 		this.add(pr, BorderLayout.EAST);
 		
-		PanelCircuitos pcr = new PanelCircuitos();
-		this.add(pcr, BorderLayout.SOUTH);
 
 		PanelControles pc = new PanelControles(pr);	
 		this.add(pc, BorderLayout.WEST);
+
+
+		PanelMalla pm = new PanelMalla();
+		this.add(pm, BorderLayout.CENTER);	
+
+		PanelCircuitos pcr = new PanelCircuitos(pm);
+		this.add(pcr, BorderLayout.SOUTH);
 		
 		this.setLocation(50, 0);
 		this.pack();
