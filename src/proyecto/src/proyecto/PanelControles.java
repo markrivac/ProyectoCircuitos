@@ -19,16 +19,27 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class PanelControles extends JPanel implements ActionListener{
+	//Buttons
 	private JButton bResultado;
-	@SuppressWarnings("unused")
+	
+	//Resistances array
 	private Resistencia[] arrRes = new Resistencia[6];
+	//Possible resistances
 	private Resistencia panelRes, 
 						panelRes2,
 						panelRes3,
 						panelRes4,
 						panelRes5;
+	
+	//Panel where all the sums will go
 	private PanelResultados pr;
+	//Possible Voltages
+	@SuppressWarnings("unused")
 	private Voltaje voltaje;
+	//Counter of possible resistances
+	private int contador;
+	
+	//Constructor
 	public PanelControles(PanelResultados pr) {
 		super();
 		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.CENTER);
@@ -45,6 +56,13 @@ public class PanelControles extends JPanel implements ActionListener{
 		this.voltaje=new Voltaje();
 		this.pr=pr;
 		
+		//Add components into the array
+		arrRes[0]=this.panelRes;
+		arrRes[1]=this.panelRes2;
+		arrRes[2]=this.panelRes3;
+		arrRes[3]=this.panelRes4;
+		arrRes[4]=this.panelRes5;
+		
 		//Adds components into the panel
 		this.add(bResultado);
 		
@@ -52,18 +70,19 @@ public class PanelControles extends JPanel implements ActionListener{
 		this.bResultado.addActionListener(this);
 	}
 	
+	//Adds the resistances and voltages into the array
 	public void agregaPanel(){
-		this.add(panelRes);
-		this.add(panelRes2);
-		this.add(panelRes3);
-		this.add(panelRes4);
-		this.add(panelRes5);
-		this.add(voltaje);
+		System.out.println(this.contador);
+		for(int i=0;i<contador;i++){
+			this.add(arrRes[contador]);
+			this.contador=this.contador+1;
+		}
 		this.add(bResultado);
+		System.out.println("agrega panel");
 		this.revalidate();
 	}
 	
-
+	//Actions of the buttons
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==this.bResultado){
@@ -71,5 +90,14 @@ public class PanelControles extends JPanel implements ActionListener{
 			pr.setBackground(Color.black);
 			this.agregaPanel();
 		}
+	}
+	
+	//Getters and setters
+	public void setContadorR(int contador){
+		this.contador=contador;	
+	}
+	
+	public int getContador(){
+		return this.contador;
 	}
 }

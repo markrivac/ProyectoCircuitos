@@ -29,9 +29,6 @@ public class PanelMalla extends JPanel implements MouseListener{
 					  capacitorIMG,
 					  conductorIMG,
 					  voltajeIMG;
-
-	
-	private PanelControles pc;
 	
 	private String componente;
 
@@ -106,7 +103,6 @@ public class PanelMalla extends JPanel implements MouseListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		System.out.println("hola");
-		pc.agregaPanel();
 	}
 
 	@Override
