@@ -30,7 +30,7 @@ public class MainProyecto extends JFrame{
 		this.add(pc, BorderLayout.WEST);
 
 
-		PanelMalla pm = new PanelMalla();
+		PanelMalla pm = new PanelMalla(pc);
 		this.add(pm, BorderLayout.CENTER);	
 
 		PanelCircuitos pcr = new PanelCircuitos(pm);

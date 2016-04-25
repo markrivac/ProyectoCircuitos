@@ -83,21 +83,20 @@ public class PanelCircuitos extends JPanel implements ActionListener
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==this.resistencia){
-			System.out.println("resistencia");
-			pm.cambiarComponente("Resistencia");
+			System.out.println("soy un boton de resistencia");
+			pm.cambiarComponente("resistencia");
 			
 		}else if(e.getSource()==this.capacitor){
-			System.out.println("capacitor");
-			pm.cambiarComponente("Capacitor");
+			System.out.println("soy un boton de capacitor");
+			pm.cambiarComponente("capacitor");
 			
 		}else if(e.getSource()==this.voltaje){
-			System.out.println("voltaje");
-			pm.cambiarComponente("Voltaje");
+			System.out.println("soy un boton de voltaje");
+			pm.cambiarComponente("voltaje");
 			
 		}else if(e.getSource()==this.conductor){
-			System.out.println("conductor");
-			pm.cambiarComponente("Conductor");
-			
+			System.out.println("soy un boton de conductor");
+			pm.cambiarComponente("conductor");	
 		}
 	}
 }

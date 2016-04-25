@@ -15,6 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
@@ -73,10 +74,10 @@ public class PanelControles extends JPanel implements ActionListener{
 	//Adds the resistances and voltages into the array
 	public void agregaPanel(){
 		System.out.println(this.contador);
-		for(int i=0;i<contador;i++){
+		/*for(int i=0;i<contador;i++){
 			this.add(arrRes[contador]);
 			this.contador=this.contador+1;
-		}
+		}*/
 		this.add(bResultado);
 		System.out.println("agrega panel");
 		this.revalidate();
@@ -92,12 +93,17 @@ public class PanelControles extends JPanel implements ActionListener{
 		}
 	}
 	
-	//Getters and setters
-	public void setContadorR(int contador){
-		this.contador=contador;	
+	//Suma Resitencia
+	public void setContadorR(){
+			if(this.contador<=5){
+			this.contador++;	
+			}else{
+				JOptionPane.showMessageDialog(this, "Limit reached");
+			}
 	}
 	
-	public int getContador(){
+	//Getter
+	public int getContadorR(){
 		return this.contador;
 	}
 }
