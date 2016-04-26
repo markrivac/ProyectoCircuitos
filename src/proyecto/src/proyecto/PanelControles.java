@@ -123,14 +123,17 @@ public class PanelControles extends JPanel implements ActionListener{
 		}
 	}
 
-	//Suma Resitencia
+	//Pseudo Setters
 	public void setContadorR(){
 		this.contador++;	
 	}
 
-	//Suma Voltaje
 	public void setContadorV(){
 		this.contadorV++;	
+	}
+	
+	public void setContadorT(){
+		this.contadorT++;
 	}
 
 	//Getter

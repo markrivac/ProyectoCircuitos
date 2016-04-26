@@ -9,13 +9,10 @@ package proyecto;
  */
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -23,10 +20,6 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class PanelMalla extends JPanel implements ActionListener{
 	//Declaration 
-	private ImageIcon resistenciaIMG,
-					  capacitorIMG,
-					  conductorIMG,
-					  voltajeIMG;
 	private JButton bComponente1,
 					bComponente2,
 					bComponente3,
@@ -40,7 +33,8 @@ public class PanelMalla extends JPanel implements ActionListener{
 	//Main Constructor
 	public PanelMalla(PanelControles pc)  {
 		super();
-		((FlowLayout)this.getLayout()).setAlignment(FlowLayout.LEFT);
+		//((FlowLayout)this.getLayout()).setAlignment(FlowLayout.LEFT);
+		this.setLayout(null);
 		this.setPreferredSize(new Dimension(440,680));
 		this.setBackground(Color.WHITE);
 		this.pc=pc;
@@ -52,31 +46,13 @@ public class PanelMalla extends JPanel implements ActionListener{
 		this.bComponente6=new JButton("Componente6");
 		
 
-		//Instantiation of images
-		this.resistenciaIMG = new ImageIcon(getClass().getResource("resistencia.png"));
-		this.capacitorIMG = new ImageIcon(getClass().getResource("capacitor.png"));
-		this.conductorIMG =new ImageIcon(getClass().getResource("conductor.png"));
-		this.voltajeIMG = new ImageIcon(getClass().getResource("voltaje.png"));
-		Image img = resistenciaIMG.getImage() ;  
-		Image newimg = img.getScaledInstance( 100, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
-		resistenciaIMG = new ImageIcon( newimg );
-		Image img2 = capacitorIMG.getImage() ;  
-		Image newimg2 = img2.getScaledInstance( 100, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
-		capacitorIMG = new ImageIcon( newimg2 );
-		Image img3 = conductorIMG.getImage() ;  
-		Image newimg3 = img3.getScaledInstance( 100, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
-		conductorIMG = new ImageIcon( newimg3 );
-		Image img4 = voltajeIMG.getImage() ;  
-		Image newimg4 = img4.getScaledInstance( 100, 100,  java.awt.Image.SCALE_SMOOTH ) ;  
-		voltajeIMG = new ImageIcon( newimg4 );
-
 		//Adding components
 		this.add(bComponente1);
-		/*this.add(bComponente2);
+		this.add(bComponente2);
 		this.add(bComponente3);
 		this.add(bComponente4);
 		this.add(bComponente5);
-		this.add(bComponente6);*/
+		this.add(bComponente6);
 
 		//Adds listeners
 		this.bComponente1.addActionListener(this);
@@ -86,8 +62,12 @@ public class PanelMalla extends JPanel implements ActionListener{
 		this.bComponente5.addActionListener(this);
 		this.bComponente6.addActionListener(this);
 		
-		this.bComponente1.setLayout(null);
-		this.bComponente1.setBounds(100, 100, 100, 100);
+		this.bComponente1.setBounds(160, 20, 100, 80);
+		this.bComponente2.setBounds(320, 140, 100, 80);
+		this.bComponente3.setBounds(320, 300, 100, 80);
+		this.bComponente4.setBounds(160, 420, 100, 80);
+		this.bComponente5.setBounds(20, 300, 100, 80);
+		this.bComponente6.setBounds(20, 140, 100, 80);
 	}
 
 	//Method with all the Graphics functions
@@ -132,7 +112,7 @@ public class PanelMalla extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e){
 		if(pc.getContadorTotal()<6){
-			//Adds numbers to the sum in the panel controles
+			//Adds numbers to the sum in the panel controls
 			if(this.componente=="resistencia"){
 				System.out.println(this.componente);
 				pc.setContadorR();
@@ -142,6 +122,8 @@ public class PanelMalla extends JPanel implements ActionListener{
 				pc.setContadorV();
 				System.out.println("num v: "+pc.getContadorV());
 				pc.agregaPanel();
+			}else if(this.componente=="conductor"||this.componente=="capacitor"){
+				pc.setContadorT();
 			}else{
 				System.out.println("no hay boton presionado");
 			}
