@@ -12,6 +12,7 @@ package proyecto;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,6 +28,7 @@ public class PanelCircuitos extends JPanel implements ActionListener
 	
 	private ImageIcon resistenciaIMG,capacitorIMG,conductorIMG,voltajeIMG;
 	private JButton resistencia, capacitor, conductor, voltaje;
+	private boolean foto;
 	private PanelMalla pm;
 	
 	public PanelCircuitos() {
@@ -75,13 +77,18 @@ public class PanelCircuitos extends JPanel implements ActionListener
 		this.capacitor.addActionListener(this);
 		this.voltaje.addActionListener(this);
 		this.conductor.addActionListener(this);
+		
+		this.foto=false;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
 		// TODO Auto-generated method stub
 		if(e.getSource()==this.resistencia){
 			System.out.println("resistencia");
+			this.foto=true;
+			
 		}else if(e.getSource()==this.capacitor){
 			System.out.println("capacitor");
 		}else if(e.getSource()==this.voltaje){
@@ -91,9 +98,9 @@ public class PanelCircuitos extends JPanel implements ActionListener
 		}
 	}
 	
-
-	
-
+	public boolean getFoto(){
+		return this.foto;
+	}
 	
 }
 	

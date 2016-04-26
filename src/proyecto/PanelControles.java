@@ -28,6 +28,7 @@ public class PanelControles extends JPanel implements ActionListener{
 						panelRes4,
 						panelRes5;
 	private PanelResultados pr;
+	
 	private Voltaje voltaje;
 	public PanelControles(PanelResultados pr) {
 		super();

@@ -12,11 +12,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -24,7 +20,9 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class PanelMalla extends JPanel{
 	
-	private ImageIcon resistenciaIMG,capacitorIMG,conductorIMG,voltajeIMG;
+	ImageIcon resistenciaIMG;
+	private ImageIcon capacitorIMG,conductorIMG,voltajeIMG;
+	private PanelCircuitos pc = new PanelCircuitos();
 
 	
 	public PanelMalla()  {
@@ -82,10 +80,25 @@ public class PanelMalla extends JPanel{
 		g.drawRect(20, 300, 100, 80);
 		
 		g.drawLine(60, 300, 60, 220);
-		g.drawRect(20, 140, 100, 80);
+		//g.drawRect(20, 140, 100, 80);
+		if (pc.getFoto()==true){
+			g.drawImage(this.resistenciaIMG.getImage(), 20, 140, 100, 80, null);}
 		g.drawLine(60, 60, 60, 140);
 		
 		g.drawLine(60, 260, 380, 260);
+		repaint();
+	}
+	
+	public void dibujaResistencia(){
+	}
+	public void dibujaVoltaje(Graphics g){
+		
+	}
+	public void dibujaConductor(Graphics g){
+	
+	}
+	public void dibujaCapacitor(Graphics g){
+	
 	}
 
 	
