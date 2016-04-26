@@ -1,11 +1,11 @@
 package proyecto;
 /**
- * Saved as Resistencia.java
+ * Saved as Voltaje.java
  * @author Kevin Oswaldo Cabrera Navarro A01227157
  * @author Mark Octavio Rivera Acosta A01234567
  * 
  * Started in April 6th, 2016
- * Last modified in April 20th, 2016
+ * Last modified in April 25th, 2016
  */
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -15,12 +15,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class Voltaje extends JPanel implements ActionListener {
-	@SuppressWarnings("unused")
 	private int valor=0;
 	private JButton bOk, bReset;	
 	private JLabel lLabel;
@@ -38,7 +38,7 @@ public class Voltaje extends JPanel implements ActionListener {
 		this.lLabel= new JLabel("Voltaje");
 		this.fuente= new Font("New Times Roman",Font.BOLD,13);
 		this.lLabel.setFont(fuente);
-		this.tTexto= new JTextField(9);
+		this.tTexto= new JTextField(7);
 		
 		//Adds components into the panel
 		this.bOk.addActionListener(this);
@@ -51,10 +51,17 @@ public class Voltaje extends JPanel implements ActionListener {
 		this.add(bReset);
 	}
 	
-	//Actions are perfomed in this method
+	//Actions are performed in this method
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==this.bOk){
 		this.valor= Integer.parseInt(this.tTexto.getText());
+		//checks its positive
+		if(this.valor<0){
+			JOptionPane.showMessageDialog(null, "NO PUEDEN SER VOLTAJES NEGATIVOS");
+			this.tTexto.setText("0");
+			this.valor=0;
+		}
+		//prints value (Only for testing)
 		System.out.println("El valor es: "+this.valor);
 		
 		}else if(e.getSource()==this.bReset){

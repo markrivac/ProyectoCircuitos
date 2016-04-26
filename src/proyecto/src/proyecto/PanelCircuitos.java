@@ -1,12 +1,11 @@
 package proyecto;
-
 /**
  * Saved as PanelCircuitos.java
  * @author Kevin Oswaldo Cabrera Navarro A01227157
  * @author Mark Octavio Rivera Acosta A01234567
  * 
  * Started in April 6th, 2016
- * Last modified in April 19th, 2016
+ * Last modified in April 25th, 2016
  */
 
 import java.awt.Color;
@@ -22,11 +21,17 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class PanelCircuitos extends JPanel implements ActionListener
-{
+public class PanelCircuitos extends JPanel implements ActionListener{
+	private ImageIcon resistenciaIMG,
+					  capacitorIMG,
+					  conductorIMG,
+					  voltajeIMG;
 	
-	private ImageIcon resistenciaIMG,capacitorIMG,conductorIMG,voltajeIMG;
-	private JButton resistencia, capacitor, conductor, voltaje;
+	private JButton resistencia, 
+					capacitor, 
+					conductor, 
+					voltaje;
+	
 	private PanelMalla pm;
 	
 	public PanelCircuitos(PanelMalla pm) {
@@ -83,19 +88,19 @@ public class PanelCircuitos extends JPanel implements ActionListener
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==this.resistencia){
-			System.out.println("soy un boton de resistencia");
+			//System.out.println("soy un boton de resistencia");
 			pm.cambiarComponente("resistencia");
 			
 		}else if(e.getSource()==this.capacitor){
-			System.out.println("soy un boton de capacitor");
+			//System.out.println("soy un boton de capacitor");
 			pm.cambiarComponente("capacitor");
 			
 		}else if(e.getSource()==this.voltaje){
-			System.out.println("soy un boton de voltaje");
+			//System.out.println("soy un boton de voltaje");
 			pm.cambiarComponente("voltaje");
 			
 		}else if(e.getSource()==this.conductor){
-			System.out.println("soy un boton de conductor");
+			//System.out.println("soy un boton de conductor");
 			pm.cambiarComponente("conductor");	
 		}
 	}
